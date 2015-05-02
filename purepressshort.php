@@ -14,7 +14,7 @@
 function pure_g_shortcode( $atts , $content = null ) {
 
 	// Code
-       return '<div class="pure-g">' . do_shortcode($content) . '</pure-g>';
+       return '<div class="pure-g">' . do_shortcode($content) . '</div>';
 }
 add_shortcode( 'pure-g', 'pure_g_shortcode' );
 
@@ -23,47 +23,75 @@ add_shortcode( 'pure-g', 'pure_g_shortcode' );
 // Grid Short code
 /* [col span="4" offset="2"]Here is the content[/col]
 */
-function col_shortcode( $atts, $content = null  ) {
+function pure_u_shortcode( $atts, $content = null  ) {
 
 	// Attributes
 	extract( shortcode_atts(
 		array(
-			'xsmall' => '',
+                        'standard' => '1',
 			'small' => '',
-			'medium' => '12',
+			'medium' => '',
 			'large' => '',
+			'xlarge' => '',
 			'class' => '',
 		), $atts )
 	);
 
 	// Check to see if offset is empty, if empty then remove from return code
-	$xsmalltest = "";
-	$smalltest = "";
+	$standardtest = "";
+        $smalltest = "";
 	$mediumtest = "";
 	$largetest = "";
+	$xlargetest = "";
 	$classtest = "";
 
-
-	if($xsmall != "") {
-		$xsmalltest = 'col-xs-' . $xsmall . ' ';
+        if($standard != "") {
+		$standardtest = 'pure-u-' . $standard . ' ';
 	};
+        
 	if($small != "") {
-		$smalltest = 'col-sm-' . $small . ' ';
+		$smalltest = 'pure-u-sm-' . $small . ' ';
 	};
 	if($medium != "") {
-		$mediumtest = 'col-md-' . $medium . ' ';
+		$mediumtest = 'pure-u-md-' . $medium . ' ';
 	};
 	if($large != "") {
-		$largetest = 'col-lg-' . $large;
+		$largetest = 'pure-u-lg-' . $large . ' ';
+	};
+	if($xlarge != "") {
+		$xlargetest = 'pure-u-xl-' . $xlarge;
 	};
 	if($class != "") {
 		$classtest = ' ' . $class;
 	};
 
-	return '<div class="' .  $xsmalltest . $smalltest . $mediumtest . $largetest . $classtest .  '">' . do_shortcode($content) . '</div>';
+	return '<div class="' .  $standardtest .  $smalltest . $mediumtest . $largetest . $xlargetest . $classtest .  '">' . do_shortcode($content) . '</div>';
 }
-add_shortcode( 'col', 'col_shortcode' );
+add_shortcode( 'pure-u', 'pure_u_shortcode' );
 
+
+function pure_button_shortcode( $atts , $content = null ) {
+    
+        extract( shortcode_atts(
+		array(
+                        'href' => '',
+			'class' => '',
+		), $atts )
+	);
+        
+        $hreftest = "";
+        $classtest = "";
+        
+        if($href != "") {
+		$hreftest = ' ' . $href . ' ';
+	};
+        if($class != "") {
+		$classtest = ' ' . $class;
+	};
+	// Code
+       return '<a href="' .$hreftest . '" class="pure-button' . $classtest . '">' . do_shortcode($content) . '</a>';
+}
+add_shortcode( 'button', 'pure_button_shortcode' );
 
 
 	// Adding TinyMCE Buttons
@@ -76,7 +104,7 @@ add_shortcode( 'col', 'col_shortcode' );
 	   }  
 	}  
 	function register_button($buttons) {  
-	   array_push($buttons, "rowfluid","column");  // For each button add to the grid
+	   array_push($buttons, "rowfluid","column","thebutton");  // For each button add to the grid
 	   return $buttons;  
 	}  
 	function add_plugin($plugin_array) {  

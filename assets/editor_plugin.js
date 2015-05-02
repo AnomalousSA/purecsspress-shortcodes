@@ -10,10 +10,19 @@
                 }  
             });
 			ed.addButton('column', {  
-                title : 'Add a Column',  
+                title : 'Add a Grid Unit',  
                 image : url+'/column.png',  
                 onclick : function() {  
-                     ed.selection.setContent('[col xsmall="" small="" medium="" large="" class=""]' + ed.selection.getContent() + '[/col]');  
+                     ed.selection.setContent('[pure-u standard="1" small="" medium="" large="" xlarge="" class=""]' + ed.selection.getContent() + '[/pure-u]');  
+
+                }  
+            }); 
+            
+            ed.addButton('thebutton', {  
+                title : 'Add a button',  
+                image : url+'/button.png',  
+                onclick : function() {  
+                     ed.selection.setContent('[button href="" class=""]' + ed.selection.getContent() + '[/button]');  
 
                 }  
             }); 
