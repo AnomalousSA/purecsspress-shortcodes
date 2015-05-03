@@ -93,6 +93,119 @@ function pure_button_shortcode( $atts , $content = null ) {
 }
 add_shortcode( 'button', 'pure_button_shortcode' );
 
+function pure_table_shortcode( $atts , $content = null ) {
+    
+        extract( shortcode_atts(
+		array(
+			'class' => '',
+		), $atts )
+	);
+        
+        $classtest = "";
+        
+        
+        if($class != "") {
+		$classtest = ' ' . $class;
+	};
+	// Code
+       return '<table class="pure-table ' . $classtest .  '">' . do_shortcode($content) . '</table>';
+}
+add_shortcode( 'table', 'pure_table_shortcode' );
+
+function pure_table_head_shortcode( $atts , $content = null ) {
+    
+        extract( shortcode_atts(
+		array(
+			'class' => '',
+		), $atts )
+	);
+        
+        $classtest = "";
+        
+        
+        if($class != "") {
+		$classtest = ' ' . $class;
+	};
+	// Code
+       return '<thead class="' . $classtest .  '"><tr>' . do_shortcode($content) . '</tr></thead>';
+}
+add_shortcode( 'thead', 'pure_table_head_shortcode' );
+
+function pure_table_head_column_shortcode( $atts , $content = null ) {
+    
+        extract( shortcode_atts(
+		array(
+			'class' => '',
+		), $atts )
+	);
+        
+        $classtest = "";
+        
+        
+        if($class != "") {
+		$classtest = ' ' . $class;
+	};
+	// Code
+       return '<th class="' . $classtest .  '">' . do_shortcode($content) . '</th>';
+}
+add_shortcode( 'theadcol', 'pure_table_head_column_shortcode' );
+
+function pure_table_body_shortcode( $atts , $content = null ) {
+    
+        extract( shortcode_atts(
+		array(
+			'class' => '',
+		), $atts )
+	);
+        
+        $classtest = "";
+        
+        
+        if($class != "") {
+		$classtest = ' ' . $class;
+	};
+	// Code
+       return '<tbody class="' . $classtest .  '">' . do_shortcode($content) . '</tbody>';
+}
+add_shortcode( 'tbody', 'pure_table_body_shortcode' );
+
+function pure_table_body_row_shortcode( $atts , $content = null ) {
+    
+        extract( shortcode_atts(
+		array(
+			'class' => '',
+		), $atts )
+	);
+        
+        $classtest = "";
+        
+        
+        if($class != "") {
+		$classtest = ' ' . $class;
+	};
+	// Code
+       return '<tr class="' . $classtest .  '">' . do_shortcode($content) . '</tr>';
+}
+add_shortcode( 'tbodyrow', 'pure_table_body_row_shortcode' );
+
+function pure_table_body_col_shortcode( $atts , $content = null ) {
+    
+        extract( shortcode_atts(
+		array(
+			'class' => '',
+		), $atts )
+	);
+        
+        $classtest = "";
+        
+        
+        if($class != "") {
+		$classtest = ' ' . $class;
+	};
+	// Code
+       return '<td class="' . $classtest .  '">' . do_shortcode($content) . '</td>';
+}
+add_shortcode( 'tbodycol', 'pure_table_body_col_shortcode' );
 
 	// Adding TinyMCE Buttons
 	add_action('init', 'add_button');  
@@ -104,7 +217,7 @@ add_shortcode( 'button', 'pure_button_shortcode' );
 	   }  
 	}  
 	function register_button($buttons) {  
-	   array_push($buttons, "rowfluid","column","thebutton");  // For each button add to the grid
+	   array_push($buttons, "rowfluid","column","thebutton",'table');  // For each button add to the grid
 	   return $buttons;  
 	}  
 	function add_plugin($plugin_array) {  

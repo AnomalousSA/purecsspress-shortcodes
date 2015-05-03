@@ -26,7 +26,36 @@
 
                 }  
             }); 
+            
+            ed.addButton('table', {  
+                title : 'Add a table',  
+                image : url+'/table.png',  
+                onclick : function() {  
+                     ed.selection.setContent('[table class=""]<br>\n\
+ [thead]<br>\n\
+[theadcol]Header 1[/theadcol]\n\
+[theadcol]Header 2[/theadcol]\n\
+[theadcol]Header 3[/theadcol]<br>\n\
+[/thead]<br>\n\
+[tbody]<br>\n\
+[tbodyrow]\n\
+[tbodycol]Content1[/tbodycol]\n\
+[tbodycol]Content2[/tbodycol]\n\
+[tbodycol]Content3[/tbodycol]\n\
+[/tbodyrow]<br>\n\
+[/tbody]<br>\n\
+[/table]');  
 
+                }  
+            }); 
+            ed.addButton('thead', {  
+                title : 'Add a table head',  
+                image : url+'/table.png',  
+                onclick : function() {  
+                     ed.selection.setContent('[thead class=""]' + ed.selection.getContent() + '[/thead]');  
+
+                }  
+            }); 
 			
         },  
         createControl : function(n, cm) {  
