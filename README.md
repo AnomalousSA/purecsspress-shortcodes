@@ -18,15 +18,15 @@ There are new buttons on the content of post and pages.
     * xlarge is equal to pure-u-xl-"number"
     * class is for any additional classes you want to add, multiple classes can be added.
 * B Button: Add a button - [button href="http://www.theurl.com" class="pure-button-primary"]the button text[/button]
-* T Button: Add a table -
-    *[table class=""]
-    *[thead]
-    *[theadcol]Header 1[/theadcol] [theadcol]Header 2[/theadcol] [theadcol]Header 3[/theadcol]
-    *[/thead]
-    *[tbody]
-    *[tbodyrow] [tbodycol]Content1[/tbodycol] [tbodycol]Content2[/tbodycol] [tbodycol]Content3[/tbodycol] [/tbodyrow]
-    *[/tbody]
-    *[/table]
+* T Button: Add a table
+    * [table class=""]
+    * [thead]
+    * [theadcol]Header 1[/theadcol] [theadcol]Header 2[/theadcol] [theadcol]Header 3[/theadcol]
+    * [/thead]
+    * [tbody]
+    * [tbodyrow] [tbodycol]Content1[/tbodycol] [tbodycol]Content2[/tbodycol] [tbodycol]Content3[/tbodycol] [/tbodyrow]
+    * [/tbody]
+    * [/table]
     * Each row of the table requires a new [tbodyrow]Content[/tbodyrow]
 
 
