@@ -51,3 +51,7 @@ Monstrosity short codes (Bootstrap) [Monstrosity short codes](https://github.com
 
 Yahoo [Pure.css](https://github.com/yahoo/pure/)
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/AnomalousSA/purecsspress-shortcodes/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
